@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-import {  View, Text, } from 'react-native';
+import {  View, Text, StyleSheet, } from 'react-native';
 
 export default class Add extends Component {
   render() {
     return (
-      <View>
+      <View style = {styles.container}>
         <Text> Add </Text>
       </View>
     );
   }
 }
+
+styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+})

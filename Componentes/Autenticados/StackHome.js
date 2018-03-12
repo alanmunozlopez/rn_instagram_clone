@@ -16,11 +16,14 @@ const StackHome = StackNavigator({
   },
   Comentarios: {
     screen: Comentarios,
+    navigationOptions: {
+      tabBarVisible: false,
+    },
   },
 },
-{
-  headerMode: 'none',
-},
+// {
+//   headerMode: 'none',
+// },
 );
 
 export { StackHome };
