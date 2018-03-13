@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {  View, Text, Button, StyleSheet, } from 'react-native';
 
 export default class Comentarios extends Component {
+  static navigationOptions = {
+    tabBarVisible: false,
+  }
   render() {
     const { navigation } = this.props;
     return (

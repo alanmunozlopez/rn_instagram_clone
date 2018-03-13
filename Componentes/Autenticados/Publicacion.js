@@ -11,6 +11,10 @@ export default class Publicacion extends Component {
           title = 'Comentarios'
           onPress = {() => { navigation.navigate('Comentarios'); }}
         />
+        <Button
+          title = 'Autor'
+          onPress = {() => { navigation.navigate('Autor'); }}
+        />
       </View>
     );
   }
