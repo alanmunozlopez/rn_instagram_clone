@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
 import { RutasNoAutenticadas } from './Componentes/NoAutenticados/RutasNoAutenticadas';
 import { RutasAutenticadas } from './Componentes/Autenticados/RutasAutenticadas';
+import Store from './Store/Store';
 
 console.disableYellowBox = ['Remote Debugger'];
 
@@ -15,7 +17,9 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <RutasAutenticadas />
+        <Provider store={Store}>
+          <RutasNoAutenticadas />
+        </Provider>
       </View>
     );
   }
