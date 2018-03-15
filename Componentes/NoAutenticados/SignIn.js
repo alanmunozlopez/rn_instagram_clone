@@ -9,7 +9,7 @@ export default class SignIn extends Component {
         <Text> SignIn </Text>
         <Button
             title = 'Go to Sign Up'
-            onPress = {()=> { navigation.navigate('SignUp'); }}
+            onPress = { () => { navigation.navigate('SignUp'); }}
         />
       </View>
     );
