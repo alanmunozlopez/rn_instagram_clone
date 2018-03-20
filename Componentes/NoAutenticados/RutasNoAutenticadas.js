@@ -2,7 +2,7 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Text, View, Button } from 'react-native';
 import SignIn from './SignIn';
-import SignUp from './SingUp.js';
+import SignUp from './SignUp.js';
 
 const RutasNoAutenticadas = StackNavigator({
   SignIn: {
