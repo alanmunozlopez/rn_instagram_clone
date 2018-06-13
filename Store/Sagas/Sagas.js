@@ -1,5 +1,6 @@
 import { takeEvery, call } from 'redux-saga/effects';
 import { authentication, database } from '../Servicios/Firebase';
+import CONSTANTS from '../CONSTANTS';
 
 const registroEnFirebase = values =>
   authentication
@@ -12,7 +13,7 @@ const registroEnBaseDeDatos = ({ uid, email, nombre }) =>
     email,
   });
 
-function* generadoraRegistro(values) {
+function* sagaRegistro(values) {
   try {
     const registro = yield call(registroEnFirebase, values.datos);
     console.log('done register');
@@ -26,8 +27,23 @@ function* generadoraRegistro(values) {
   }
 }
 
+const loginEnFireBase = ({correo, password}) =>
+  authentication
+    .signInWithEmailAndPassword(correo, password)
+    .then(success => success.toJSON());
+
+function* sagaLogin(values) {
+  try {
+    const resultado = yield call(loginEnFireBase, values.datos);
+    console.log(resultado);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export default function* funcionPrimaria() {
-  yield takeEvery('REGISTRO', generadoraRegistro);
+  yield takeEvery(CONSTANTS.REGISTRO, sagaRegistro);
+  yield takeEvery(CONSTANTS.LOGIN, sagaLogin);
   // yield ES6: pausar ejecucion y regresar un valor.
   console.log('Desde nuestra funcion generadora');
 }
